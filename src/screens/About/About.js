@@ -7,5 +7,5 @@ const StyledAbout = styled.div`
 `;
 
 export function About() {
-  return <StyledAbout id="about">About</StyledAbout>;
+  return <StyledAbout id="about">Coming sooooon</StyledAbout>;
 }
