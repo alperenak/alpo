@@ -1,0 +1,7 @@
+export { default as Check } from './Check'
+export { default as Facebook } from './Facebook'
+export { default as FourDots } from './FourDots'
+export { default as Github } from './Github'
+export { default as Instagram } from './Instagram'
+export { default as Logo } from './Logo'
+export { default as Twitter } from './Twitter'
