@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Title from "../../components/Title/Title";
 
 const StyledAbout = styled.div`
   display: flex;
@@ -7,5 +8,9 @@ const StyledAbout = styled.div`
 `;
 
 export function About() {
-  return <StyledAbout id="about">Coming soooosadsadaon</StyledAbout>;
+  return (
+    <StyledAbout id="about">
+      <Title title={"About"} />
+    </StyledAbout>
+  );
 }

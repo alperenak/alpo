@@ -1,8 +1,12 @@
 import * as React from "react";
+import styled from "styled-components";
 
+const StyledSvg = styled.svg`
+  height: 100px;
+`;
 function SvgFourDots(props) {
   return (
-    <svg
+    <StyledSvg
       width="1em"
       height="1em"
       viewBox="0 0 20 110"
@@ -14,7 +18,7 @@ function SvgFourDots(props) {
       <circle cx={10} cy={40} r={10} fill="#000" />
       <circle cx={10} cy={70} r={10} fill="#000" />
       <circle cx={10} cy={100} r={10} fill="#000" />
-    </svg>
+    </StyledSvg>
   );
 }
 

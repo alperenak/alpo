@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Title from "../../components/Title/Title";
 
 const StyledHireMe = styled.div`
   display: flex;
@@ -7,5 +8,9 @@ const StyledHireMe = styled.div`
 `;
 
 export function HireMe() {
-  return <StyledHireMe id="hireMe">HireMe</StyledHireMe>;
+  return (
+    <StyledHireMe id="hireMe">
+      <Title title={"Hire Me"} />
+    </StyledHireMe>
+  );
 }
