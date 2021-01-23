@@ -2,9 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import TopBar from "../../components/TopBar/TopBar";
 import { fontSize, HomeSideData } from "../../helpers/allVariable";
-import { Check, Facebook, Github, Instagram, Twitter } from "../../icons/index";
-import HomeImage from "../../assets/images/home.png";
-
+import {
+  Check,
+  Facebook,
+  Github,
+  Instagram,
+  Twitter,
+  HomeImage,
+} from "../../icons/index";
 const StyledHome = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,6 +26,7 @@ const StyledLeftSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 70px;
   justify-content: center;
 `;
 const StyledRightSide = styled.div`
@@ -32,7 +38,7 @@ const StyledRightSide = styled.div`
 const StyledLandingTitle = styled.div`
   font-size: ${fontSize.xxLg};
   font-weight: 900;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
 `;
 const StyledLandingFeaturesWrapper = styled.div`
   display: flex;
@@ -62,11 +68,7 @@ const StyledSocialNetworks = styled.div`
   justify-content: space-between;
   width: 320px;
 `;
-const StyledRightSideImages = styled.img.attrs((props) => ({
-  src: HomeImage,
-}))`
-  width: 90%;
-`;
+
 export default function Home() {
   return (
     <StyledHome id="home">
@@ -79,7 +81,7 @@ export default function Home() {
           </StyledLandingFeaturesWrapper>
         </StyledLeftSide>
         <StyledRightSide>
-          <StyledRightSideImages />
+          <HomeImage />
         </StyledRightSide>
       </StyledHomeMain>
       <StyledSocialNetworksWrapper>
