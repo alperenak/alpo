@@ -1,6 +1,7 @@
 import Soruio from "../assets/images/soruio.png";
 import Ufakca from "../assets/images/ufakca.png";
 import Hangiliman from "../assets/images/hangiliman.png";
+import { Mail, Phone, Location } from "../icons";
 export const fontSize = {
   xSm: "16px",
   sm: "18px",
@@ -59,4 +60,10 @@ export const WorksCardsData = [
       "Soru.io event oluşturabiliceğiniz, oluşturduğunuz eventlar sayesinde insanlarla etkileşimde bulunabileceğiniz Sli.do tarzi bir web tabanlı uygulama",
     src: Soruio,
   },
+];
+
+export const HireInformationData = [
+  { icon: <Phone />, text: "+90 530 820 69 55" },
+  { icon: <Mail />, text: "alperenkaraguzel@gmail.com" },
+  { icon: <Location />, text: "Samsun, Turkey" },
 ];

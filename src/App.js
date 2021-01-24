@@ -16,6 +16,7 @@ const StyledAppWrapper = styled.div`
 const StyledApp = styled.div`
   display: flex;
   flex-direction: column;
+  max-width: 1250px;
   width: 85%;
 `;
 function App() {

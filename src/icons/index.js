@@ -13,3 +13,8 @@ export { default as Redux } from "./Redux";
 export { default as Right } from "./Right";
 export { default as Sass } from "./Sass";
 export { default as Twitter } from "./Twitter";
+export { default as AboutImage } from "./AboutImage";
+export { default as Location } from "./Location";
+export { default as Phone } from "./Phone";
+export { default as Mail } from "./Mail";
+export { default as HireMeImage } from "./HireMeImage";

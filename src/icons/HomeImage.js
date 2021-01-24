@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 
 const StyledSvg = styled.svg`
-  width: 90%;
+  width: 80%;
   height: 90%;
 `;
 function SvgHomeImage(props) {

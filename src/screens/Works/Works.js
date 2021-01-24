@@ -2,12 +2,13 @@ import React from "react";
 import styled, { keyframes } from "styled-components";
 import Carousel from "../../components/Carousel/Carousel";
 import Title from "../../components/Title/Title";
-import Soruio from "../../assets/images/soruio.png";
 import { fontSize, WorksCardsData } from "../../helpers/allVariable";
 const StyledWorks = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 const TextAnimation = keyframes`
  0% {
