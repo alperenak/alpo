@@ -7,8 +7,6 @@ const StyledWorks = styled.div`
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 `;
 const TextAnimation = keyframes`
  0% {
@@ -81,22 +79,29 @@ const StyledCardBackgroundImage = styled.img.attrs((props) => ({
   left: 0;
   top: 0;
 `;
-
+const StyledCarouserWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`;
 export function Works() {
   return (
     <StyledWorks id="works">
       <Title title={"Works"} />
-      <Carousel>
-        {WorksCardsData.map((item) => {
-          return (
-            <RenderCard
-              title={item.title}
-              description={item.description}
-              backgroundImage={item.src}
-            />
-          );
-        })}
-      </Carousel>
+      <StyledCarouserWrapper>
+        <Carousel>
+          {WorksCardsData.map((item) => {
+            return (
+              <RenderCard
+                title={item.title}
+                description={item.description}
+                backgroundImage={item.src}
+              />
+            );
+          })}
+        </Carousel>
+      </StyledCarouserWrapper>
     </StyledWorks>
   );
 }
