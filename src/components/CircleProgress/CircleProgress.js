@@ -21,10 +21,9 @@ export default function CircleProgress({ percent, title, icon }) {
     position: relative;
   `;
   const animationCircle = keyframes`
-
-100% {
-stroke-dashoffset: ${returnPercentValue(circleArround, percent)};
-}
+  100% {
+  stroke-dashoffset: ${returnPercentValue(circleArround, percent)};
+  }
 `;
   const StyledCircleSvg = styled.svg`
     transform: rotate(-90deg);

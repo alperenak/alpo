@@ -14,6 +14,7 @@ const StyledHome = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  max-height: 100vh;
   width: 100%;
 `;
 const StyledHomeMain = styled.div`
@@ -26,7 +27,7 @@ const StyledLeftSide = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 70px;
+  padding-bottom: 70px;
   justify-content: center;
 `;
 const StyledRightSide = styled.div`

@@ -1,3 +1,6 @@
+import Soruio from "../assets/images/soruio.png";
+import Ufakca from "../assets/images/ufakca.png";
+import Hangiliman from "../assets/images/hangiliman.png";
 export const fontSize = {
   xSm: "16px",
   sm: "18px",
@@ -37,3 +40,23 @@ export const HomeSideData = {
     },
   ],
 };
+export const WorksCardsData = [
+  {
+    title: "Hangiliman",
+    description:
+      "Hangiliman, Denizseverlerin tekne, yat vb. deniz taşıtlarını bu platform üzerinden kiralayabilmesini sağlayan web tabanlı bir uygulama",
+    src: Hangiliman,
+  },
+  {
+    title: "Ufak.ca",
+    description:
+      "Ufak.ca, Upuzun linklerinizi hızlı ve kolay bir biçimde kısaltabileceğiniz web tabanlı bir uygulama",
+    src: Ufakca,
+  },
+  {
+    title: "Soru.io",
+    description:
+      "Soru.io event oluşturabiliceğiniz, oluşturduğunuz eventlar sayesinde insanlarla etkileşimde bulunabileceğiniz Sli.do tarzi bir web tabanlı uygulama",
+    src: Soruio,
+  },
+];

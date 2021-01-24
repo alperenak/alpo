@@ -7,7 +7,7 @@ const StyledTopBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 2;
+  flex: 5;
 `;
 const StyledNavMenu = styled.div`
   display: flex;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledSvg = styled.svg`
   width: 90%;
-  height: 100%;
+  height: 90%;
 `;
 function SvgHomeImage(props) {
   return (
