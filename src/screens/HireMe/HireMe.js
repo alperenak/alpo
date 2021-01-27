@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import Loading from "../../components/Loading/Loading";
+import { SendHireMessage } from "../../API/fetch";
 import Input from "../../components/Input/Input";
 import Title from "../../components/Title/Title";
 import { fontSize, HireInformationData } from "../../helpers/allVariable";
-import { HireMeImage } from "../../icons";
+import UseFetchData from "../../Hooks/UseFetchData/useFetchData";
+import { Check, Close, HireMeImage } from "../../icons";
 
 const StyledHireMe = styled.div`
   display: flex;
@@ -38,6 +41,9 @@ const StyledLeftSideForm = styled.div`
   width: 100%;
   padding-left: 50px;
 `;
+const StyledSendButtonWrapper = styled.div`
+  display: flex;
+`;
 const StyledSendButton = styled.div`
   background-color: black;
   display: flex;
@@ -70,7 +76,46 @@ const StyledHireInformationText = styled.div`
   margin-left: 10px;
   display: flex;
 `;
+const StyledSuccessSendingMessageWrapper = styled.div`
+  display: flex;
+  margin-left: 20px;
+  justify-content: center;
+  transition: 0.3s;
+  align-items: center;
+`;
+const StyledErrorSendingMessageWrapper = styled.div`
+  display: flex;
+  transition: 0.3s;
+  justify-content: center;
+  margin-left: 10px;
+  align-items: center;
+`;
+const StyledSuccessSendingMessage = styled.div`
+  font-size: ${fontSize.xSm};
+  margin-left: 5px;
+`;
+const StyledErrorSendingMessage = styled.div`
+  margin-left: 5px;
+  font-size: ${fontSize.xSm};
+`;
 export function HireMe() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [fetching, setFetching] = UseFetchData();
+
+  function SendMessage() {
+    setFetching.onLoading();
+
+    let payload = {
+      email: email,
+      message: message,
+    };
+
+    SendHireMessage(payload)
+      .then((data) => setFetching.onSuccess(data))
+      .catch((e) => setFetching.onError(e));
+  }
+
   return (
     <StyledHireMe id="hireMe">
       <Title title={"Hire Me"} />
@@ -78,9 +123,22 @@ export function HireMe() {
         <StyledSidesWrapper>
           <StyledLeftSide>
             <StyledLeftSideForm>
-              <Input type={"input"} labelName={"Email"} />
-              <Input type={"textarea"} labelName={"Message"} />
-              <StyledSendButton>Send Me</StyledSendButton>
+              <Input
+                type={"input"}
+                labelName={"Email"}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <Input
+                type={"textarea"}
+                labelName={"Message"}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+              <StyledSendButtonWrapper>
+                <StyledSendButton onClick={SendMessage}>
+                  Send Me
+                </StyledSendButton>
+                <RenderSendingMessages fetching={fetching} />
+              </StyledSendButtonWrapper>
             </StyledLeftSideForm>
           </StyledLeftSide>
           <StyledRightSide>
@@ -94,6 +152,36 @@ export function HireMe() {
     </StyledHireMe>
   );
 }
+
+function RenderSendingMessages({ fetching }) {
+  return (
+    <>
+      {fetching.isLoading && <Loading />}
+      {fetching.isSuccess && (
+        <StyledSuccessSendingMessageWrapper>
+          <Check small />
+          <StyledSuccessSendingMessage>
+            Mesajınız başarıyla iletildi
+          </StyledSuccessSendingMessage>
+        </StyledSuccessSendingMessageWrapper>
+      )}
+      {fetching.isError && (
+        <StyledErrorSendingMessageWrapper>
+          <Close />
+          <StyledErrorSendingMessage>
+            Email veya Mesaj kısmı boş bırakılmamalı
+          </StyledErrorSendingMessage>
+        </StyledErrorSendingMessageWrapper>
+      )}
+    </>
+  );
+}
+
+function RenderHireInformation() {
+  return HireInformationData.map((item) => {
+    return <HireInformation icon={item.icon} text={item.text} />;
+  });
+}
 function HireInformation({ icon, text }) {
   return (
     <StyledHireInformationSection>
@@ -101,9 +189,4 @@ function HireInformation({ icon, text }) {
       <StyledHireInformationText>{text}</StyledHireInformationText>
     </StyledHireInformationSection>
   );
-}
-function RenderHireInformation() {
-  return HireInformationData.map((item) => {
-    return <HireInformation icon={item.icon} text={item.text} />;
-  });
 }

@@ -1,9 +1,6 @@
 import React from "react";
-import styled from "styled-components";
 import InputText from "./sub-components/Input/Input";
 import TextArea from "./sub-components/TextArea/TextArea";
-
-const StyledInputWrapper = styled.div``;
 
 export default function Input(props) {
   return (

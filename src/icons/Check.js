@@ -1,9 +1,18 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const StyledSvg = styled.svg`
-  width: 25px;
-  height: 25px;
+  ${(props) => {
+    return props.small
+      ? css`
+          width: 15px;
+          height: 15px;
+        `
+      : css`
+          width: 25px;
+          height: 25px;
+        `;
+  }}
 `;
 
 function SvgCheck(props) {
